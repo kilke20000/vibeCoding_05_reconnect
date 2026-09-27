@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Re:Connect - 동창회 초대장</title>
+  <meta name="description" content="세월이 흘러도 변하지 않는 우리들의 이야기, Re:Connect 동창회에 여러분을 초대합니다.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 배경 데코레이션 (꽃잎/빛망울 파티클) -->
+  <div class="particles-container" id="particlesContainer" aria-hidden="true"></div>
+
+  <!-- BGM 플레이어 토글 버튼 -->
+  <button class="bgm-toggle-btn" id="bgmToggleBtn" aria-label="배경 음악 켜기/끄기" title="배경 음악">
+    <i class="fa-solid fa-music"></i>
+    <span class="music-wave">
+      <span></span><span></span><span></span>
+    </span>
+  </button>
+
+  <div class="app-wrapper">
+    <!-- 모바일 컨테이너 -->
+    <main class="mobile-container">
+      
+      <!-- 1. 히어로 커버 섹션 -->
+      <section class="hero-section" id="hero">
+        <div class="hero-badge">REUNION INVITATION</div>
+        <h1 class="hero-title">Re:Connect</h1>
+        <div class="hero-subtitle">동창회에 소중한 당신을 초대합니다</div>
+        
+        <div class="hero-divider">
+          <span class="line"></span>
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span class="line"></span>
+        </div>
+
+        <div class="hero-info-card">
+          <div class="info-row">
+            <i class="fa-regular fa-calendar-check"></i>
+            <span>2032년 10월 1일 (토) 오후 5:00</span>
+          </div>
+          <div class="info-row">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>서울 창경궁 (Changgyeonggung)</span>
+          </div>
+        </div>
+
+        <div class="scroll-down-hint">
+          <span>초대장 열어보기</span>
+          <i class="fa-solid fa-chevron-down animate-bounce"></i>
+        </div>
+      </section>
+
+      <!-- 2. 초대 글 섹션 (invitation.txt 기반) -->
+      <section class="section invitation-section" id="invitation">
+        <div class="section-badge">초대의 글</div>
+        <h2 class="section-title">소중한 추억을 다시 잇다</h2>
+        
+        <div class="letter-card">
+          <div class="quote-mark open"><i class="fa-solid fa-quote-left"></i></div>
+          <p class="letter-text">
+            세월이 흘러도 변하지 않는 우리들의 이야기,<br>
+            <strong class="highlight-text">Re:Connect</strong>에 초대합니다.
+          </p>
+          <p class="letter-text">
+            강의실과 교정을 함께 누비며 웃고 울던 그때의 소중한 추억을 기억하시나요?
+          </p>
+          <p class="letter-text">
+            오랜만에 흩어져 있던 반가운 얼굴들이 한자리에 모여 서로의 근황을 나누고자 합니다.
+          </p>
+          <p class="letter-text">
+            맛있는 음식과 즐거운 이야기가 준비되어 있으니 부담 없이 오셔서 자리를 빛내주세요.
+          </p>
+          <div class="quote-mark close"><i class="fa-solid fa-quote-right"></i></div>
+          
+          <div class="letter-signature">
+            <span class="sig-title">동창회 준비위원회 일동</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. [사진 섹션] - 한 장씩 부드럽게 넘기는 슬라이더 애니메이션 -->
+      <section class="section gallery-section" id="gallerySection">
+        <div class="section-badge">추억 갤러리</div>
+        <h2 class="section-title">[사진 섹션]</h2>
+        <p class="section-desc">그 시절 우리가 함께했던 눈부신 순간들</p>
+
+        <div class="slider-container" id="photoSlider">
+          <div class="slider-track" id="sliderTrack">
+            
+            <!-- 슬라이드 1: 봄소풍 -->
+            <div class="slide" data-index="0">
+              <div class="slide-image-wrapper">
+                <img src="pictures/봄소풍.jpg" alt="봄소풍 사진" loading="lazy">
+                <div class="slide-gradient-overlay"></div>
+                <div class="slide-caption">
+                  <span class="caption-tag">봄날의 기억</span>
+                  <h3>푸르렀던 우리들의 봄소풍</h3>
+                </div>
+              </div>
+            </div>
+
+            <!-- 슬라이드 2: 입학 -->
+            <div class="slide" data-index="1">
+              <div class="slide-image-wrapper">
+                <img src="pictures/입학.jpg" alt="입학 사진" loading="lazy">
+                <div class="slide-gradient-overlay"></div>
+                <div class="slide-caption">
+                  <span class="caption-tag">첫 만남</span>
+                  <h3>설렘 가득했던 입학식 날</h3>
+                </div>
+              </div>
+            </div>
+
+            <!-- 슬라이드 3: 장기자랑 -->
+            <div class="slide" data-index="2">
+              <div class="slide-image-wrapper">
+                <img src="pictures/장기자랑.jpg" alt="장기자랑 사진" loading="lazy">
+                <div class="slide-gradient-overlay"></div>
+                <div class="slide-caption">
+                  <span class="caption-tag">웃음 가득</span>
+                  <h3>열정 넘치던 장기자랑 무대</h3>
+                </div>
+              </div>
+            </div>
+
+            <!-- 슬라이드 4: 졸업 -->
+            <div class="slide" data-index="3">
+              <div class="slide-image-wrapper">
+                <img src="pictures/졸업.jpg" alt="졸업 사진" loading="lazy">
+                <div class="slide-gradient-overlay"></div>
+                <div class="slide-caption">
+                  <span class="caption-tag">새로운 시작</span>
+                  <h3>빛나는 청춘, 졸업식의 약속</h3>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- 이전 / 다음 컨트롤 버튼 -->
+          <button class="slider-btn prev-btn" id="prevSlideBtn" aria-label="이전 사진">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="slider-btn next-btn" id="nextSlideBtn" aria-label="다음 사진">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+
+          <!-- 슬라이더 하단 컨트롤 바 -->
+          <div class="slider-bottom-controls">
+            <!-- 페이지네이션 인디케이터 점 -->
+            <div class="slider-indicators" id="sliderIndicators">
+              <button class="indicator active" data-index="0" aria-label="1번 사진"></button>
+              <button class="indicator" data-index="1" aria-label="2번 사진"></button>
+              <button class="indicator" data-index="2" aria-label="3번 사진"></button>
+              <button class="indicator" data-index="3" aria-label="4번 사진"></button>
+            </div>
+
+            <!-- 자동재생 토글 및 페이지 번호 -->
+            <div class="slider-meta">
+              <button class="autoplay-btn" id="autoplayBtn" title="자동 재생 일시정지/재개">
+                <i class="fa-solid fa-pause"></i>
+              </button>
+              <span class="page-counter" id="pageCounter">1 / 4</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="swipe-guide"><i class="fa-solid fa-hand-pointer"></i> 좌우로 스와이프하여 사진을 넘겨보세요</p>
+      </section>
+
+      <!-- 4. [카운트다운 섹션] - 실시간 카운트다운 애니메이션 -->
+      <section class="section countdown-section" id="countdownSection">
+        <div class="section-badge">D-DAY COUNTDOWN</div>
+        <h2 class="section-title">[카운트다운 섹션]</h2>
+        <p class="section-desc">우리가 다시 만나는 날까지</p>
+
+        <!-- D-Day 태그 -->
+        <div class="dday-badge-container">
+          <div class="dday-pill" id="ddayPill">D-Day 계산 중...</div>
+        </div>
+
+        <!-- 실시간 카운트다운 타이머 그리드 -->
+        <div class="countdown-grid" id="countdownGrid">
+          
+          <div class="time-box">
+            <div class="flip-card">
+              <span class="time-num" id="countDays">00</span>
+            </div>
+            <span class="time-label">DAYS (일)</span>
+          </div>
+
+          <div class="time-colon">:</div>
+
+          <div class="time-box">
+            <div class="flip-card">
+              <span class="time-num" id="countHours">00</span>
+            </div>
+            <span class="time-label">HOURS (시)</span>
+          </div>
+
+          <div class="time-colon">:</div>
+
+          <div class="time-box">
+            <div class="flip-card">
+              <span class="time-num" id="countMinutes">00</span>
+            </div>
+            <span class="time-label">MINS (분)</span>
+          </div>
+
+          <div class="time-colon">:</div>
+
+          <div class="time-box">
+            <div class="flip-card pulse-box">
+              <span class="time-num" id="countSeconds">00</span>
+            </div>
+            <span class="time-label">SECS (초)</span>
+          </div>
+
+        </div>
+
+        <!-- 행사 일시 상세 카드 -->
+        <div class="event-schedule-card">
+          <div class="schedule-header">
+            <i class="fa-regular fa-clock"></i>
+            <span>행사 일시</span>
+          </div>
+          <div class="schedule-datetime">2032.10.1 (토) 오후 5시</div>
+          <div class="schedule-desc">등록 및 리셉션 16:30부터 시작</div>
+          
+          <div class="calendar-btn-wrap">
+            <button class="btn-sub-action" id="addToCalBtn">
+              <i class="fa-solid fa-calendar-plus"></i> 구글 캘린더에 일정 추가
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. [지도 섹션] - 300x300픽셀 크기 "창경궁" 구글 위치 지도 -->
+      <section class="section map-section" id="mapSection">
+        <div class="section-badge">오시는 길</div>
+        <h2 class="section-title">[지도 섹션]</h2>
+        <p class="section-desc">창경궁에서 만나요</p>
+
+        <!-- 구글 지도 컨테이너 (정확히 300x300 픽셀 크기) -->
+        <div class="map-outer-wrapper">
+          <div class="google-map-card">
+            
+            <!-- 구글 스타일 헤더 바 -->
+            <div class="google-map-topbar">
+              <div class="google-brand">
+                <i class="fa-brands fa-google google-logo"></i>
+                <span class="google-text">Google 지도</span>
+              </div>
+              <div class="google-place-title">서울 창경궁</div>
+            </div>
+
+            <!-- 300x300 픽셀 구글 지도 뷰어 (실시간 인터랙티브 지도) -->
+            <div class="google-map-300x300" id="googleMapContainer">
+              <iframe 
+                src="https://maps.google.com/maps?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C+%EC%A2%85%EB%A1%9C%EA%B5%AC+%EC%B0%BD%EA%B2%BD%EA%B5%81%EB%A1%9C+185+%EC%B0%BD%EA%B2%BD%EA%B5%81&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                width="300" 
+                height="300" 
+                style="border:0; width:300px; height:300px; display:block;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="창경궁 구글 지도">
+              </iframe>
+            </div>
+
+            <!-- 지도 하단 구글 지도 바로가기 & 길찾기 바 -->
+            <div class="google-map-footer">
+              <a href="https://www.google.com/maps/search/?api=1&query=%EC%B0%BD%EA%B2%BD%EA%B5%81" target="_blank" rel="noopener noreferrer" class="google-link-btn google-primary" id="googleMapMainLink">
+                <i class="fa-solid fa-map-location-dot"></i> 구글 지도 보기
+              </a>
+              <a href="https://www.google.com/maps/dir/?api=1&destination=%EC%B0%BD%EA%B2%BD%EA%B5%81" target="_blank" rel="noopener noreferrer" class="google-link-btn google-route" id="googleRouteLink">
+                <i class="fa-solid fa-diamond-turn-right"></i> 구글 길찾기
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 지도 바로가기 보조 퀵 버튼 (네이버 지도 / 카카오맵) -->
+        <div class="sub-map-links">
+          <a href="https://map.naver.com/p/search/%EC%B0%BD%EA%B2%BD%EA%B5%81" target="_blank" rel="noopener noreferrer" class="sub-map-chip naver">
+            <span class="chip-n">N</span> 네이버 지도
+          </a>
+          <a href="https://map.kakao.com/link/search/창경궁" target="_blank" rel="noopener noreferrer" class="sub-map-chip kakao">
+            <i class="fa-solid fa-location-arrow"></i> 카카오맵
+          </a>
+          <a href="https://tmap.life/search?query=창경궁" target="_blank" rel="noopener noreferrer" class="sub-map-chip tmap">
+            <i class="fa-solid fa-car"></i> 티맵
+          </a>
+        </div>
+
+        <!-- 장소 세부 정보 및 복사 -->
+        <div class="location-details-card">
+          <div class="loc-item">
+            <span class="loc-label">주소</span>
+            <div class="loc-val-wrap">
+              <span class="loc-val" id="addressText">서울특별시 종로구 창경궁로 185 (창경궁)</span>
+              <button class="copy-btn" id="copyAddressBtn" title="주소 복사">
+                <i class="fa-regular fa-copy"></i> 복사
+              </button>
+            </div>
+          </div>
+
+          <div class="transport-info">
+            <div class="transport-row">
+              <div class="trans-tag subway">지하철</div>
+              <div class="trans-desc">
+                <strong>4호선 혜화역</strong> 4번 출구에서 도보 약 12분<br>
+                <strong>3호선 안국역</strong> 3번 출구에서 도보 약 18분
+              </div>
+            </div>
+            <div class="transport-row">
+              <div class="trans-tag bus">버스</div>
+              <div class="trans-desc">
+                <strong>창경궁·서울대학교병원</strong> 정류장 하차<br>
+                간선: 100, 102, 104, 106, 107, 108, 140, 143, 150, 151
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. 참석 여부 (RSVP) & 방명록 섹션 -->
+      <section class="section rsvp-section" id="rsvpSection">
+        <div class="section-badge">RSVP</div>
+        <h2 class="section-title">참석 여부 알리기</h2>
+        <p class="section-desc">원활한 행사 준비를 위해 참석 여부를 알려주세요</p>
+
+        <form class="rsvp-form" id="rsvpForm">
+          <div class="form-group">
+            <label for="guestName">이름 / 학번</label>
+            <input type="text" id="guestName" placeholder="예: 홍길동 (08학번)" required>
+          </div>
+
+          <div class="form-group">
+            <label>참석 여부</label>
+            <div class="radio-group">
+              <label class="radio-card selected">
+                <input type="radio" name="attendStatus" value="attend" checked>
+                <i class="fa-regular fa-circle-check"></i>
+                <span>참석합니다</span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="attendStatus" value="absent">
+                <i class="fa-regular fa-circle-xmark"></i>
+                <span>아쉽지만 불참해요</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="guestMessage">동창들에게 남길 한마디</label>
+            <textarea id="guestMessage" rows="2" placeholder="오랜만에 만날 친구들에게 전하고 싶은 메시지를 남겨주세요"></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn" id="submitRsvpBtn">
+            <i class="fa-solid fa-paper-plane"></i> 참석 등록 & 메시지 남기기
+          </button>
+        </form>
+
+        <!-- 방명록 메시지 리스트 -->
+        <div class="guestbook-feed" id="guestbookFeed">
+          <h3 class="feed-title"><i class="fa-regular fa-comments"></i> 남겨진 이야기들 (<span id="guestCount">0</span>)</h3>
+          <div class="feed-list" id="feedList">
+            <!-- 동적 렌더링 -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. 공유 및 복사 섹션 -->
+      <section class="section share-section">
+        <h2 class="section-title">초대장 공유하기</h2>
+        <p class="section-desc">소중한 동창 친구들에게 초대장을 전달해주세요</p>
+        
+        <div class="share-buttons">
+          <button class="share-btn share-link" id="shareLinkBtn">
+            <i class="fa-solid fa-link"></i> 링크 복사
+          </button>
+          <button class="share-btn share-kakao" id="shareKakaoBtn">
+            <i class="fa-solid fa-comment"></i> 카카오톡 공유
+          </button>
+        </div>
+      </section>
+
+      <!-- 푸터 -->
+      <footer class="invitation-footer">
+        <div class="footer-logo">Re:Connect</div>
+        <p class="footer-copy">© 2032 Alumni Reunion. All Rights Reserved.</p>
+        <p class="footer-sub">그때 그 시절의 우리, 다시 만나는 설렘</p>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- 이미지 라이트박스 모달 -->
+  <div class="lightbox-modal" id="lightboxModal" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="닫기"><i class="fa-solid fa-xmark"></i></button>
+    <div class="lightbox-content">
+      <img src="" alt="" id="lightboxImg">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- 토스트 알림 메시지 -->
+  <div class="toast-message" id="toastMessage">주소가 복사되었습니다!</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
